@@ -37,7 +37,7 @@ public class SubscriptionsController : ControllerBase
                 new SubscriptionResponse(
                     subscription.Id,
                     ToDto(subscription.SubscriptionType))),
-            _ => Problem());
+            error => Problem(error.Description));
     }
 
     [HttpGet("{subscriptionId:guid}")]
@@ -51,7 +51,7 @@ public class SubscriptionsController : ControllerBase
             subscription => Ok(new SubscriptionResponse(
                 subscription.Id,
                 ToDto(subscription.SubscriptionType))),
-            _ => Problem());
+            error => Problem(error.Description));
     }
 
     private static SubscriptionType ToDto(DomainSubscriptionType subscriptionType)

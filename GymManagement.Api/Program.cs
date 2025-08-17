@@ -28,7 +28,11 @@ var app = builder.Build();
     app.UseAuthorization();
     app.MapControllers();
 
-    var dbContext = app.Services.GetRequiredService<GymDbContext>();
-    await dbContext.Database.MigrateAsync();
+    using (var scope = app.Services.CreateScope())
+    {
+        var dbContext = scope.ServiceProvider.GetRequiredService<GymDbContext>();
+        await dbContext.Database.MigrateAsync();
+    }
+
     app.Run();
 }
