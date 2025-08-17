@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v9.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v9.0": {
+      "GymManagement.Api/1.0.0": {
+        "runtime": {
+          "GymManagement.Api.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "GymManagement.Api/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

@@ -1,0 +1,4 @@
+C:\Users\lezgi\RiderProjects\GymManagement\GymManagement.Domain\obj\Debug\net9.0\GymManagement.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\lezgi\RiderProjects\GymManagement\GymManagement.Domain\obj\Debug\net9.0\GymManagement.Domain.AssemblyInfoInputs.cache
+C:\Users\lezgi\RiderProjects\GymManagement\GymManagement.Domain\obj\Debug\net9.0\GymManagement.Domain.AssemblyInfo.cs
+C:\Users\lezgi\RiderProjects\GymManagement\GymManagement.Domain\obj\Debug\net9.0\GymManagement.Domain.csproj.CoreCompileInputs.cache

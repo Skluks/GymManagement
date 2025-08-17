@@ -1,0 +1,14 @@
+C:\Users\lezgi\RiderProjects\GymManagement\GymManagement.Api\bin\Debug\net9.0\GymManagement.Api.exe
+C:\Users\lezgi\RiderProjects\GymManagement\GymManagement.Api\bin\Debug\net9.0\GymManagement.Api.deps.json
+C:\Users\lezgi\RiderProjects\GymManagement\GymManagement.Api\bin\Debug\net9.0\GymManagement.Api.runtimeconfig.json
+C:\Users\lezgi\RiderProjects\GymManagement\GymManagement.Api\bin\Debug\net9.0\GymManagement.Api.dll
+C:\Users\lezgi\RiderProjects\GymManagement\GymManagement.Api\bin\Debug\net9.0\GymManagement.Api.pdb
+C:\Users\lezgi\RiderProjects\GymManagement\GymManagement.Api\obj\Debug\net9.0\GymManagement.Api.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\lezgi\RiderProjects\GymManagement\GymManagement.Api\obj\Debug\net9.0\GymManagement.Api.AssemblyInfoInputs.cache
+C:\Users\lezgi\RiderProjects\GymManagement\GymManagement.Api\obj\Debug\net9.0\GymManagement.Api.AssemblyInfo.cs
+C:\Users\lezgi\RiderProjects\GymManagement\GymManagement.Api\obj\Debug\net9.0\GymManagement.Api.csproj.CoreCompileInputs.cache
+C:\Users\lezgi\RiderProjects\GymManagement\GymManagement.Api\obj\Debug\net9.0\GymManagement.Api.dll
+C:\Users\lezgi\RiderProjects\GymManagement\GymManagement.Api\obj\Debug\net9.0\refint\GymManagement.Api.dll
+C:\Users\lezgi\RiderProjects\GymManagement\GymManagement.Api\obj\Debug\net9.0\GymManagement.Api.pdb
+C:\Users\lezgi\RiderProjects\GymManagement\GymManagement.Api\obj\Debug\net9.0\GymManagement.Api.genruntimeconfig.cache
+C:\Users\lezgi\RiderProjects\GymManagement\GymManagement.Api\obj\Debug\net9.0\ref\GymManagement.Api.dll

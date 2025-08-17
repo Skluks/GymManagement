@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "jdbdbIYinIk=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\lezgi\\RiderProjects\\GymManagement\\GymManagement.Application\\GymManagement.Application.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\lezgi\\.nuget\\packages\\erroror\\2.0.1\\erroror.2.0.1.nupkg.sha512",
+    "C:\\Users\\lezgi\\.nuget\\packages\\mediatr\\12.1.1\\mediatr.12.1.1.nupkg.sha512",
+    "C:\\Users\\lezgi\\.nuget\\packages\\mediatr.contracts\\2.0.1\\mediatr.contracts.2.0.1.nupkg.sha512",
+    "C:\\Users\\lezgi\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\9.0.8\\microsoft.extensions.dependencyinjection.abstractions.9.0.8.nupkg.sha512"
+  ],
+  "logs": []
+}
