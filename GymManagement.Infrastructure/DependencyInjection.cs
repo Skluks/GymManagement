@@ -1,6 +1,7 @@
 ﻿using GymManagement.Application.Common.Interfaces;
+using GymManagement.Infrastructure.Admins.Persistence;
 using GymManagement.Infrastructure.Common.Persistence;
-using GymManagement.Infrastructure.Subscriptions;
+using GymManagement.Infrastructure.Gyms.Persistence;
 using GymManagement.Infrastructure.Subscriptions.Persistence;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -20,8 +21,9 @@ public static class DependencyInjection
         });
 
         services.AddScoped<IUnitOfWork>(provider => provider.GetRequiredService<GymDbContext>());
+        services.AddScoped<IAdminsRepository, AdminsRepository>();
+        services.AddScoped<IGymsRepository, GymsRepository>();
         services.AddScoped<ISubscriptionsRepository, SubscriptionsRepository>();
-
         return services;
     }
 }
