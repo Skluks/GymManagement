@@ -1,6 +1,4 @@
-C:\Users\lezgi\RiderProjects\GymManagement\GymManagement.Application\bin\Debug\net9.0\GymManagement.Application.exe
 C:\Users\lezgi\RiderProjects\GymManagement\GymManagement.Application\bin\Debug\net9.0\GymManagement.Application.deps.json
-C:\Users\lezgi\RiderProjects\GymManagement\GymManagement.Application\bin\Debug\net9.0\GymManagement.Application.runtimeconfig.json
 C:\Users\lezgi\RiderProjects\GymManagement\GymManagement.Application\bin\Debug\net9.0\GymManagement.Application.dll
 C:\Users\lezgi\RiderProjects\GymManagement\GymManagement.Application\bin\Debug\net9.0\GymManagement.Application.pdb
 C:\Users\lezgi\RiderProjects\GymManagement\GymManagement.Application\obj\Debug\net9.0\GymManagement.Application.GeneratedMSBuildEditorConfig.editorconfig
@@ -10,5 +8,9 @@ C:\Users\lezgi\RiderProjects\GymManagement\GymManagement.Application\obj\Debug\n
 C:\Users\lezgi\RiderProjects\GymManagement\GymManagement.Application\obj\Debug\net9.0\GymManagement.Application.dll
 C:\Users\lezgi\RiderProjects\GymManagement\GymManagement.Application\obj\Debug\net9.0\refint\GymManagement.Application.dll
 C:\Users\lezgi\RiderProjects\GymManagement\GymManagement.Application\obj\Debug\net9.0\GymManagement.Application.pdb
-C:\Users\lezgi\RiderProjects\GymManagement\GymManagement.Application\obj\Debug\net9.0\GymManagement.Application.genruntimeconfig.cache
 C:\Users\lezgi\RiderProjects\GymManagement\GymManagement.Application\obj\Debug\net9.0\ref\GymManagement.Application.dll
+C:\Users\lezgi\RiderProjects\GymManagement\GymManagement.Application\bin\Debug\net9.0\GymManagement.Domain.dll
+C:\Users\lezgi\RiderProjects\GymManagement\GymManagement.Application\bin\Debug\net9.0\GymManagement.Domain.pdb
+C:\Users\lezgi\RiderProjects\GymManagement\GymManagement.Application\obj\Debug\net9.0\GymManagement.Application.csproj.AssemblyReference.cache
+C:\Users\lezgi\RiderProjects\GymManagement\GymManagement.Application\obj\Debug\net9.0\GymManagement.Application.sourcelink.json
+C:\Users\lezgi\RiderProjects\GymManagement\GymManagement.Application\obj\Debug\net9.0\GymManag.E831DFE7.Up2Date

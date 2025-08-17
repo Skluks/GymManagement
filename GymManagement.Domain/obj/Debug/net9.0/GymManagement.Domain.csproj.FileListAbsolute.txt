@@ -2,3 +2,11 @@ C:\Users\lezgi\RiderProjects\GymManagement\GymManagement.Domain\obj\Debug\net9.0
 C:\Users\lezgi\RiderProjects\GymManagement\GymManagement.Domain\obj\Debug\net9.0\GymManagement.Domain.AssemblyInfoInputs.cache
 C:\Users\lezgi\RiderProjects\GymManagement\GymManagement.Domain\obj\Debug\net9.0\GymManagement.Domain.AssemblyInfo.cs
 C:\Users\lezgi\RiderProjects\GymManagement\GymManagement.Domain\obj\Debug\net9.0\GymManagement.Domain.csproj.CoreCompileInputs.cache
+C:\Users\lezgi\RiderProjects\GymManagement\GymManagement.Domain\bin\Debug\net9.0\GymManagement.Domain.deps.json
+C:\Users\lezgi\RiderProjects\GymManagement\GymManagement.Domain\bin\Debug\net9.0\GymManagement.Domain.dll
+C:\Users\lezgi\RiderProjects\GymManagement\GymManagement.Domain\bin\Debug\net9.0\GymManagement.Domain.pdb
+C:\Users\lezgi\RiderProjects\GymManagement\GymManagement.Domain\obj\Debug\net9.0\GymManagement.Domain.sourcelink.json
+C:\Users\lezgi\RiderProjects\GymManagement\GymManagement.Domain\obj\Debug\net9.0\GymManagement.Domain.dll
+C:\Users\lezgi\RiderProjects\GymManagement\GymManagement.Domain\obj\Debug\net9.0\refint\GymManagement.Domain.dll
+C:\Users\lezgi\RiderProjects\GymManagement\GymManagement.Domain\obj\Debug\net9.0\GymManagement.Domain.pdb
+C:\Users\lezgi\RiderProjects\GymManagement\GymManagement.Domain\obj\Debug\net9.0\ref\GymManagement.Domain.dll

@@ -12,8 +12,9 @@ public static class DependencyInjection
     {
         var serviceProvider = services.BuildServiceProvider();
         var configuration = serviceProvider.GetService<IConfiguration>();
-        
-        services.AddDbContext<GymDbContext>(options => options.UseNpgsql(configuration?.GetConnectionString("GymManagement")));
+
+        var connectionString = configuration?.GetConnectionString("GymManagement");
+        services.AddDbContext<GymDbContext>(options => options.UseNpgsql(connectionString));
         services.AddScoped<IUnitOfWork>(provider => provider.GetRequiredService<GymDbContext>());
 
         return services;
