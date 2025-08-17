@@ -10,11 +10,13 @@ public static class DependencyInjection
 {
     public static IServiceCollection AddInfrastructure(this IServiceCollection services)
     {
-        var serviceProvider = services.BuildServiceProvider();
-        var configuration = serviceProvider.GetService<IConfiguration>();
-
-        var connectionString = configuration?.GetConnectionString("GymManagement");
-        services.AddDbContext<GymDbContext>(options => options.UseNpgsql(connectionString));
+        services.AddDbContext<GymDbContext>((provider, options) =>
+        {
+            var configuration = provider.GetRequiredService<IConfiguration>();
+            var connectionString = configuration.GetConnectionString("GymManagement");
+            options.UseNpgsql(connectionString);
+        });
+        
         services.AddScoped<IUnitOfWork>(provider => provider.GetRequiredService<GymDbContext>());
 
         return services;

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\lezgi\\RiderProjects\\GymManagement\\GymManagement.Contracts\\GymManagement.Contracts.csproj": {}
+    "E:\\Code\\GymManagement\\GymManagement.Contracts\\GymManagement.Contracts.csproj": {}
   },
   "projects": {
-    "C:\\Users\\lezgi\\RiderProjects\\GymManagement\\GymManagement.Contracts\\GymManagement.Contracts.csproj": {
+    "E:\\Code\\GymManagement\\GymManagement.Contracts\\GymManagement.Contracts.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\lezgi\\RiderProjects\\GymManagement\\GymManagement.Contracts\\GymManagement.Contracts.csproj",
+        "projectUniqueName": "E:\\Code\\GymManagement\\GymManagement.Contracts\\GymManagement.Contracts.csproj",
         "projectName": "GymManagement.Contracts",
-        "projectPath": "C:\\Users\\lezgi\\RiderProjects\\GymManagement\\GymManagement.Contracts\\GymManagement.Contracts.csproj",
+        "projectPath": "E:\\Code\\GymManagement\\GymManagement.Contracts\\GymManagement.Contracts.csproj",
         "packagesPath": "C:\\Users\\lezgi\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\lezgi\\RiderProjects\\GymManagement\\GymManagement.Contracts\\obj\\",
+        "outputPath": "E:\\Code\\GymManagement\\GymManagement.Contracts\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\lezgi\\AppData\\Roaming\\NuGet\\NuGet.Config"

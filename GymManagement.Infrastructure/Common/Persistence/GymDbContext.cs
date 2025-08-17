@@ -6,7 +6,7 @@ namespace GymManagement.Infrastructure.Common.Persistence;
 
 public class GymDbContext : DbContext, IUnitOfWork
 {
-    public GymDbContext(DbContextOptions options) : base(options)
+    public GymDbContext(DbContextOptions<GymDbContext> options) : base(options)
     {
     }
 

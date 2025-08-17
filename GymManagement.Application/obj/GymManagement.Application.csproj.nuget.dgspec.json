@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\lezgi\\RiderProjects\\GymManagement\\GymManagement.Application\\GymManagement.Application.csproj": {}
+    "E:\\Code\\GymManagement\\GymManagement.Application\\GymManagement.Application.csproj": {}
   },
   "projects": {
-    "C:\\Users\\lezgi\\RiderProjects\\GymManagement\\GymManagement.Application\\GymManagement.Application.csproj": {
+    "E:\\Code\\GymManagement\\GymManagement.Application\\GymManagement.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\lezgi\\RiderProjects\\GymManagement\\GymManagement.Application\\GymManagement.Application.csproj",
+        "projectUniqueName": "E:\\Code\\GymManagement\\GymManagement.Application\\GymManagement.Application.csproj",
         "projectName": "GymManagement.Application",
-        "projectPath": "C:\\Users\\lezgi\\RiderProjects\\GymManagement\\GymManagement.Application\\GymManagement.Application.csproj",
+        "projectPath": "E:\\Code\\GymManagement\\GymManagement.Application\\GymManagement.Application.csproj",
         "packagesPath": "C:\\Users\\lezgi\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\lezgi\\RiderProjects\\GymManagement\\GymManagement.Application\\obj\\",
+        "outputPath": "E:\\Code\\GymManagement\\GymManagement.Application\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\lezgi\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -26,8 +26,8 @@
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "C:\\Users\\lezgi\\RiderProjects\\GymManagement\\GymManagement.Domain\\GymManagement.Domain.csproj": {
-                "projectPath": "C:\\Users\\lezgi\\RiderProjects\\GymManagement\\GymManagement.Domain\\GymManagement.Domain.csproj"
+              "E:\\Code\\GymManagement\\GymManagement.Domain\\GymManagement.Domain.csproj": {
+                "projectPath": "E:\\Code\\GymManagement\\GymManagement.Domain\\GymManagement.Domain.csproj"
               }
             }
           }
@@ -81,14 +81,14 @@
         }
       }
     },
-    "C:\\Users\\lezgi\\RiderProjects\\GymManagement\\GymManagement.Domain\\GymManagement.Domain.csproj": {
+    "E:\\Code\\GymManagement\\GymManagement.Domain\\GymManagement.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\lezgi\\RiderProjects\\GymManagement\\GymManagement.Domain\\GymManagement.Domain.csproj",
+        "projectUniqueName": "E:\\Code\\GymManagement\\GymManagement.Domain\\GymManagement.Domain.csproj",
         "projectName": "GymManagement.Domain",
-        "projectPath": "C:\\Users\\lezgi\\RiderProjects\\GymManagement\\GymManagement.Domain\\GymManagement.Domain.csproj",
+        "projectPath": "E:\\Code\\GymManagement\\GymManagement.Domain\\GymManagement.Domain.csproj",
         "packagesPath": "C:\\Users\\lezgi\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\lezgi\\RiderProjects\\GymManagement\\GymManagement.Domain\\obj\\",
+        "outputPath": "E:\\Code\\GymManagement\\GymManagement.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\lezgi\\AppData\\Roaming\\NuGet\\NuGet.Config"

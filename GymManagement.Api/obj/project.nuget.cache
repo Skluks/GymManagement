@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "eumCwQfTe+4=",
+  "dgSpecHash": "iPa4tUXYFSs=",
   "success": true,
-  "projectFilePath": "C:\\Users\\lezgi\\RiderProjects\\GymManagement\\GymManagement.Api\\GymManagement.Api.csproj",
+  "projectFilePath": "E:\\Code\\GymManagement\\GymManagement.Api\\GymManagement.Api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\lezgi\\.nuget\\packages\\erroror\\2.0.1\\erroror.2.0.1.nupkg.sha512",
     "C:\\Users\\lezgi\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
