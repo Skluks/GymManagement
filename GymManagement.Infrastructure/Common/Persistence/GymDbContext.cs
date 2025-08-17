@@ -1,5 +1,6 @@
 ﻿using GymManagement.Application.Common.Interfaces;
 using GymManagement.Domain;
+using GymManagement.Domain.Subscriptions;
 using Microsoft.EntityFrameworkCore;
 
 namespace GymManagement.Infrastructure.Common.Persistence;

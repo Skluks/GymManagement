@@ -1,4 +1,4 @@
-﻿namespace GymManagement.Domain.Enums;
+﻿namespace GymManagement.Contracts.Subscriptions;
 
 public enum SubscriptionType
 {

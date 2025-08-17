@@ -13,11 +13,17 @@ public static class DependencyInjection
         services.AddDbContext<GymDbContext>((provider, options) =>
         {
             var configuration = provider.GetRequiredService<IConfiguration>();
-            var connectionString = configuration.GetConnectionString("GymManagement");
+            string? connectionString = configuration.GetConnectionString("GymManagement");
             options.UseNpgsql(connectionString);
         });
-        
+
         services.AddScoped<IUnitOfWork>(provider => provider.GetRequiredService<GymDbContext>());
+
+        services.Scan(scan => scan
+            .FromAssemblyOf<GymDbContext>()
+            .AddClasses()
+            .AsImplementedInterfaces()
+            .WithScopedLifetime());
 
         return services;
     }
