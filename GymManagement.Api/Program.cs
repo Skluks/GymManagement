@@ -1,6 +1,8 @@
 ﻿using GymManagement.Application;
 using GymManagement.Infrastructure;
+using GymManagement.Infrastructure.Common.Persistence;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
@@ -13,7 +15,7 @@ builder.Services.AddSwaggerGen();
 builder.Services
     .AddApplication()
     .AddInfrastructure();
-    
+
 var app = builder.Build();
 {
     if (app.Environment.IsDevelopment())
@@ -26,5 +28,7 @@ var app = builder.Build();
     app.UseAuthorization();
     app.MapControllers();
 
+    var dbContext = app.Services.GetRequiredService<GymDbContext>();
+    await dbContext.Database.MigrateAsync();
     app.Run();
 }
