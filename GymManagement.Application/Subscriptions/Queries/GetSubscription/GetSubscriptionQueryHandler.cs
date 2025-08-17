@@ -7,16 +7,16 @@ namespace GymManagement.Application.Subscriptions.Queries.GetSubscription;
 
 public class GetSubscriptionQueryHandler : IRequestHandler<GetSubscriptionQuery, ErrorOr<Subscription>>
 {
-    private readonly ISubscriptionRepository _subscriptionRepository;
+    private readonly ISubscriptionsRepository _subscriptionsRepository;
 
-    public GetSubscriptionQueryHandler(ISubscriptionRepository subscriptionRepository)
+    public GetSubscriptionQueryHandler(ISubscriptionsRepository subscriptionsRepository)
     {
-        _subscriptionRepository = subscriptionRepository;
+        _subscriptionsRepository = subscriptionsRepository;
     }
 
     public async Task<ErrorOr<Subscription>> Handle(GetSubscriptionQuery request, CancellationToken cancellationToken)
     {
-        var subscription = await _subscriptionRepository.GetByIdAsync(request.Id);
+        var subscription = await _subscriptionsRepository.GetByIdAsync(request.Id);
         return subscription is null
             ? Error.NotFound(description: "Subscription not found")
             : subscription;
