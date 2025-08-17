@@ -1,15 +1,16 @@
-﻿using GymManagement.Domain;
+﻿using GymManagement.Application.Common.Interfaces;
+using GymManagement.Domain;
 using Microsoft.EntityFrameworkCore;
 
 namespace GymManagement.Infrastructure.Common.Persistence;
 
-public class GymDbContext : DbContext
+public class GymDbContext : DbContext, IUnitOfWork
 {
-    public DbSet<Subscription> Subscriptions { get; set; }
-    
     public GymDbContext(DbContextOptions options) : base(options)
     {
     }
+
+    public DbSet<Subscription> Subscriptions { get; set; }
 
     public async Task CommitChangesAsync()
     {
