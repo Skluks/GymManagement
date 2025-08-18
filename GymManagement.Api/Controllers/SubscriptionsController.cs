@@ -1,11 +1,14 @@
-﻿using GymManagement.Application.Subscriptions.Commands.CreateSubscription;
+﻿using ErrorOr;
+using GymManagement.Application.Subscriptions.Commands.CreateSubscription;
 using GymManagement.Application.Subscriptions.Commands.DeleteSubscription;
 using GymManagement.Application.Subscriptions.Queries.GetSubscription;
 using GymManagement.Contracts.Subscriptions;
+using GymManagement.Domain.Subscriptions;
 using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using DomainSubscriptionType = GymManagement.Domain.Subscriptions.SubscriptionType;
+using SubscriptionType = GymManagement.Contracts.Subscriptions.SubscriptionType;
 
 namespace GymManagement.Api.Controllers;
 
@@ -24,17 +27,17 @@ public class SubscriptionsController : ApiController
     public async Task<IActionResult> CreateSubscription([FromBody] CreateSubscriptionRequest request)
     {
         if (!Enum.TryParse(request.SubscriptionType.ToString(), out DomainSubscriptionType subscriptionType))
-            return Problem(
-                statusCode: StatusCodes.Status400BadRequest,
-                detail: "Invalid subscription type");
+        {
+            return Problem(statusCode: StatusCodes.Status400BadRequest, detail: "Invalid subscription type");
+        }
 
         var command = new CreateSubscriptionCommand(subscriptionType, request.AdminId);
-        var result = await _mediator.Send(command);
+        ErrorOr<Subscription> result = await _mediator.Send(command);
 
         return result.MatchFirst(
             subscription => CreatedAtAction(
                 nameof(GetSubscription),
-                new {subscriptionId = subscription.Id},
+                new { subscriptionId = subscription.Id },
                 new SubscriptionResponse(
                     subscription.Id,
                     ToDto(subscription.SubscriptionType))),
@@ -46,7 +49,7 @@ public class SubscriptionsController : ApiController
     {
         var query = new GetSubscriptionQuery(subscriptionId);
 
-        var getSubscriptionsResult = await _mediator.Send(query);
+        ErrorOr<Subscription> getSubscriptionsResult = await _mediator.Send(query);
 
         return getSubscriptionsResult.MatchFirst(
             subscription => Ok(new SubscriptionResponse(
@@ -60,7 +63,7 @@ public class SubscriptionsController : ApiController
     {
         var command = new DeleteSubscriptionCommand(subscriptionId);
 
-        var createSubscriptionResult = await _mediator.Send(command);
+        ErrorOr<Deleted> createSubscriptionResult = await _mediator.Send(command);
 
         return createSubscriptionResult.Match<IActionResult>(
             _ => NoContent(),
