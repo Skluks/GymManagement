@@ -31,7 +31,7 @@ public class CreateGymCommandHandler : IRequestHandler<CreateGymCommand, ErrorOr
 
         if (!result.IsValid)
         {
-            return result.Errors.Select(x => Error.Validation(x.PropertyName, x.ErrorCode)).ToList();
+            return result.Errors.Select(x => Error.Validation(x.PropertyName, x.ErrorMessage)).ToList();
         }
 
         Subscription? subscription = await _subscriptionsRepository.GetByIdAsync(command.SubscriptionId);
