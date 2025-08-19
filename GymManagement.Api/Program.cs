@@ -1,6 +1,5 @@
 ﻿using GymManagement.Application;
 using GymManagement.Infrastructure;
-using GymManagement.Infrastructure.Common.Middleware;
 using GymManagement.Infrastructure.Common.Persistence;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.EntityFrameworkCore;
@@ -22,7 +21,7 @@ builder.Services
 WebApplication app = builder.Build();
 {
     app.UseExceptionHandler();
-    app.UseMiddleware<EventualConsistencyMiddleware>();
+    app.AddInfrastructureMiddleware();
 
     if (app.Environment.IsDevelopment())
     {
