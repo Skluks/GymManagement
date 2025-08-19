@@ -14,6 +14,7 @@ public abstract class Entity
     public List<IDomainEvent> PopDomainEvents()
     {
         var copy = _domainEvents.ToList();
+        
         _domainEvents.Clear();
 
         return copy;
