@@ -1,26 +1,24 @@
 ﻿using ErrorOr;
+using GymManagement.Domain.Common;
 using GymManagement.Domain.Gyms;
 using Throw;
 
 namespace GymManagement.Domain.Subscriptions;
 
-public class Subscription
+public class Subscription : Entity
 {
     private readonly List<Guid> _gymIds = new();
     private readonly int _maxGyms;
-
-    public Guid Id { get; private set; }
     public SubscriptionType SubscriptionType { get; private set; }
     public Guid AdminId { get; private set; }
 
     public Subscription(
         SubscriptionType subscriptionType,
         Guid adminId,
-        Guid? id = null)
+        Guid? id = null) : base(id ?? Guid.NewGuid())
     {
         SubscriptionType = subscriptionType;
         AdminId = adminId;
-        Id = id ?? Guid.NewGuid();
 
         _maxGyms = GetMaxGyms();
     }
@@ -29,7 +27,10 @@ public class Subscription
     {
         _gymIds.Throw().IfContains(gym.Id);
 
-        if (_gymIds.Count >= _maxGyms) return SubscriptionErrors.CannotHaveMoreGymsThanSubscriptionAllows;
+        if (_gymIds.Count >= _maxGyms)
+        {
+            return SubscriptionErrors.CannotHaveMoreGymsThanSubscriptionAllows;
+        }
 
         _gymIds.Add(gym.Id);
 

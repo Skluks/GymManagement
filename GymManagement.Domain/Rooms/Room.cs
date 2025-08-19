@@ -1,8 +1,9 @@
+using GymManagement.Domain.Common;
+
 namespace GymManagement.Domain.Rooms;
 
-public class Room
+public class Room : Entity
 {
-    public Guid Id { get; }
     public string Name { get; } = null!;
 
     public Guid GymId { get; }
@@ -12,11 +13,10 @@ public class Room
         string name,
         Guid gymId,
         int maxDailySessions,
-        Guid? id = null)
+        Guid? id = null) : base(id ?? Guid.NewGuid())
     {
         Name = name;
         GymId = gymId;
         MaxDailySessions = maxDailySessions;
-        Id = id ?? Guid.NewGuid();
     }
 }

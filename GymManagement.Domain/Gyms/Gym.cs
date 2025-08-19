@@ -1,30 +1,29 @@
 using ErrorOr;
+using GymManagement.Domain.Common;
 using GymManagement.Domain.Rooms;
 using Throw;
 
 namespace GymManagement.Domain.Gyms;
 
-public class Gym
+public class Gym : Entity
 {
     private readonly int _maxRooms;
 
-    public Guid Id { get; }
     private readonly List<Guid> _roomIds = new();
     private readonly List<Guid> _trainerIds = new();
 
-    public string Name { get; init; } = null!;
+    public string Name { get; init; }
     public Guid SubscriptionId { get; init; }
 
     public Gym(
         string name,
         int maxRooms,
         Guid subscriptionId,
-        Guid? id = null)
+        Guid? id = null) : base(id ?? Guid.NewGuid())
     {
         Name = name;
         _maxRooms = maxRooms;
         SubscriptionId = subscriptionId;
-        Id = id ?? Guid.NewGuid();
     }
 
     public ErrorOr<Success> AddRoom(Room room)
@@ -66,6 +65,4 @@ public class Gym
     {
         _roomIds.Remove(roomId);
     }
-
-    private Gym() { }
 }
