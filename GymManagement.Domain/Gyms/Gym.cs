@@ -65,4 +65,8 @@ public class Gym : Entity
     {
         _roomIds.Remove(roomId);
     }
+
+    private Gym()
+    {
+    }
 }

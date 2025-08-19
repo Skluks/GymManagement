@@ -15,15 +15,17 @@ public static class DependencyInjection
     {
         services.AddDbContext<GymDbContext>((provider, options) =>
         {
-            var configuration = provider.GetRequiredService<IConfiguration>();
+            IConfiguration configuration = provider.GetRequiredService<IConfiguration>();
             string? connectionString = configuration.GetConnectionString("GymManagement");
             options.UseNpgsql(connectionString);
         });
 
         services.AddScoped<IUnitOfWork>(provider => provider.GetRequiredService<GymDbContext>());
+
         services.AddScoped<IAdminsRepository, AdminsRepository>();
         services.AddScoped<IGymsRepository, GymsRepository>();
         services.AddScoped<ISubscriptionsRepository, SubscriptionsRepository>();
+
         return services;
     }
 }

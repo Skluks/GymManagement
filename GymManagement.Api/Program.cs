@@ -1,23 +1,29 @@
 ﻿using GymManagement.Application;
 using GymManagement.Infrastructure;
+using GymManagement.Infrastructure.Common.Middleware;
 using GymManagement.Infrastructure.Common.Persistence;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
-var builder = WebApplication.CreateBuilder(args);
+WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddProblemDetails();
+builder.Services.AddHttpContextAccessor();
 
 builder.Services
     .AddApplication()
     .AddInfrastructure();
 
-var app = builder.Build();
+WebApplication app = builder.Build();
 {
+    app.UseExceptionHandler();
+    app.UseMiddleware<EventualConsistencyMiddleware>();
+
     if (app.Environment.IsDevelopment())
     {
         app.UseSwagger();
@@ -28,9 +34,9 @@ var app = builder.Build();
     app.UseAuthorization();
     app.MapControllers();
 
-    using (var scope = app.Services.CreateScope())
+    using (IServiceScope scope = app.Services.CreateScope())
     {
-        var dbContext = scope.ServiceProvider.GetRequiredService<GymDbContext>();
+        GymDbContext dbContext = scope.ServiceProvider.GetRequiredService<GymDbContext>();
         await dbContext.Database.MigrateAsync();
     }
 

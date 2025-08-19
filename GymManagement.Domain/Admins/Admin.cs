@@ -33,4 +33,8 @@ public class Admin : Entity
         SubscriptionId = null;
         _domainEvents.Add(new SubscriptionDeletedEvent(subscriptionId));
     }
+
+    private Admin()
+    {
+    }
 }

@@ -19,4 +19,8 @@ public class Room : Entity
         GymId = gymId;
         MaxDailySessions = maxDailySessions;
     }
+
+    private Room()
+    {
+    }
 }
