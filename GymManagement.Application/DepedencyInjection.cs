@@ -1,6 +1,6 @@
 using Microsoft.Extensions.DependencyInjection;
 using FluentValidation;
-using GymManagement.Application.Behaviors;
+using GymManagement.Application.Common.Behaviors;
 
 namespace GymManagement.Application;
 

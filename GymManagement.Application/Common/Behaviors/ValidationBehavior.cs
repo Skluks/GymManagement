@@ -3,7 +3,7 @@ using FluentValidation;
 using FluentValidation.Results;
 using MediatR;
 
-namespace GymManagement.Application.Behaviors;
+namespace GymManagement.Application.Common.Behaviors;
 
 public class ValidationBehavior<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse>
     where TRequest : IRequest<TResponse>
@@ -20,14 +20,14 @@ public class ValidationBehavior<TRequest, TResponse> : IPipelineBehavior<TReques
     {
         if (_validator is null)
         {
-            return await next();
+            return await next(cancellationToken);
         }
 
         ValidationResult? validationResult = await _validator.ValidateAsync(request, cancellationToken);
 
         if (validationResult.IsValid)
         {
-            return await next();
+            return await next(cancellationToken);
         }
 
         var errors = validationResult.Errors.Select(e => Error.Validation(e.ErrorCode, e.ErrorMessage)).ToList();
