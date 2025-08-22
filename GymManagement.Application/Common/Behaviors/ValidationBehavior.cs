@@ -29,7 +29,7 @@ public class ValidationBehavior<TRequest, TResponse> : IPipelineBehavior<TReques
         {
             return await next(cancellationToken);
         }
-
+ 
         var errors = validationResult.Errors.Select(e => Error.Validation(e.ErrorCode, e.ErrorMessage)).ToList();
 
         return (dynamic)errors;
