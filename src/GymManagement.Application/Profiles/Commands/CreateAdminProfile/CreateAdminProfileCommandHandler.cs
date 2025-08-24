@@ -3,6 +3,7 @@ using ErrorOr;
 using MediatR;
 
 using GymManagement.Application.Common.Interfaces;
+using GymManagement.Application.Common.Models;
 using GymManagement.Domain.Admins;
 
 namespace GymManagement.Application.Profiles.Commands.CreateAdminProfile;
@@ -10,10 +11,18 @@ namespace GymManagement.Application.Profiles.Commands.CreateAdminProfile;
 public class CreateAdminProfileCommandHandler(
     IUsersRepository _usersRepository,
     IAdminsRepository _adminsRepository,
-    IUnitOfWork _unitOfWork) : IRequestHandler<CreateAdminProfileCommand, ErrorOr<Guid>>
+    IUnitOfWork _unitOfWork,
+    ICurrentUserProvider _currentUserProvider) : IRequestHandler<CreateAdminProfileCommand, ErrorOr<Guid>>
 {
     public async Task<ErrorOr<Guid>> Handle(CreateAdminProfileCommand command, CancellationToken cancellationToken)
     {
+        CurrentUser currentUser = _currentUserProvider.GetCurrentUser();
+
+        if (currentUser.Id != command.UserId)
+        {
+            return Error.Unauthorized("User forbidden for this action.");
+        }
+        
         var user = await _usersRepository.GetByIdAsync(command.UserId);
 
         if (user is null)

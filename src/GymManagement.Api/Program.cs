@@ -1,18 +1,32 @@
+using GymManagement.Api;
 using GymManagement.Application;
 using GymManagement.Infrastructure;
-using GymManagement.Infrastructure.Common.Middleware;
 
 var builder = WebApplication.CreateBuilder(args);
 {
-    builder.Services.AddControllers();
-    builder.Services.AddEndpointsApiExplorer();
-    builder.Services.AddSwaggerGen();
-    builder.Services.AddProblemDetails();
-    builder.Services.AddHttpContextAccessor();
-
     builder.Services
+        .AddPresentation()
         .AddApplication()
         .AddInfrastructure(builder.Configuration);
+    
+    builder.Services.AddSwaggerGen(o =>
+    {
+        o.AddSecurityDefinition("Bearer", new()
+        {
+            Name = "Authorization",
+            Type = Microsoft.OpenApi.Models.SecuritySchemeType.Http,
+            Scheme = "bearer",
+            BearerFormat = "JWT",
+            In = Microsoft.OpenApi.Models.ParameterLocation.Header
+        });
+        o.AddSecurityRequirement(new()
+        {
+            {
+                new() { Reference = new() { Type = Microsoft.OpenApi.Models.ReferenceType.SecurityScheme, Id = "Bearer" } },
+                Array.Empty<string>()
+            }
+        });
+    });
 }
 
 var app = builder.Build();
