@@ -4,6 +4,7 @@ using GymManagement.Application.SubcutaneousTests.Common;
 using GymManagement.Domain.Subscriptions;
 using MediatR;
 using TestCommon.Gyms;
+using TestCommon.Subscriptions;
 
 namespace GymManagement.Application.SubcutaneousTests.Gyms.Commands;
 

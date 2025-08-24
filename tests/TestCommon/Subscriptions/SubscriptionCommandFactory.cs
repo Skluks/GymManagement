@@ -2,7 +2,7 @@ using GymManagement.Application.Subscriptions.Commands.CreateSubscription;
 using GymManagement.Domain.Subscriptions;
 using TestCommon.TestConstants;
 
-namespace TestCommon.Gyms;
+namespace TestCommon.Subscriptions;
 
 public static class SubscriptionCommandFactory
 {

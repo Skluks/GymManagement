@@ -1,4 +1,4 @@
-namespace GymManagement.Api.Authentication.TokenGenerator;
+namespace GymManagement.Infrastructure.Authentication.TokenGenerator;
 
 public class JwtSettings
 {

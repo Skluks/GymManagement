@@ -1,9 +1,8 @@
 using System.Text.RegularExpressions;
-
 using ErrorOr;
 using GymManagement.Domain.Common.Interfaces;
 
-namespace GymManagement.Api.Authentication.PasswordHasher;
+namespace GymManagement.Infrastructure.Authentication.PasswordHasher;
 
 public partial class PasswordHasher : IPasswordHasher
 {

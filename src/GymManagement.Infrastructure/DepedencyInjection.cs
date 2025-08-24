@@ -1,9 +1,8 @@
 using System.Text;
-using GymManagement.Api.Authentication.PasswordHasher;
-using GymManagement.Api.Authentication.TokenGenerator;
 using GymManagement.Application.Common.Interfaces;
 using GymManagement.Domain.Common.Interfaces;
 using GymManagement.Infrastructure.Admins.Persistence;
+using GymManagement.Infrastructure.Authentication.TokenGenerator;
 using GymManagement.Infrastructure.Common.Persistence;
 using GymManagement.Infrastructure.Gyms.Persistence;
 using GymManagement.Infrastructure.Subscriptions.Persistence;
@@ -14,6 +13,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
+using PasswordHasher = GymManagement.Infrastructure.Authentication.PasswordHasher.PasswordHasher;
 
 namespace GymManagement.Infrastructure;
 

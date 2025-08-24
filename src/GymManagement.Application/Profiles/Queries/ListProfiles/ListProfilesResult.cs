@@ -1,3 +1,3 @@
-namespace GymManagement.Application.Profiles.ListProfiles;
+namespace GymManagement.Application.Profiles.Queries.ListProfiles;
 
 public record ListProfilesResult(Guid? AdminId, Guid? ParticipantId, Guid? TrainerId);

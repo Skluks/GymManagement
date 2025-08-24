@@ -1,10 +1,8 @@
 using ErrorOr;
-
+using GymManagement.Application.Common.Interfaces;
 using MediatR;
 
-using GymManagement.Application.Common.Interfaces;
-
-namespace GymManagement.Application.Profiles.ListProfiles;
+namespace GymManagement.Application.Profiles.Queries.ListProfiles;
 
 public class ListProfilesQueryHandler(IUsersRepository _usersRepository) : IRequestHandler<ListProfilesQuery, ErrorOr<ListProfilesResult>>
 {

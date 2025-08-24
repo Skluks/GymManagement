@@ -1,10 +1,9 @@
 using MediatR;
 
 using Microsoft.AspNetCore.Mvc;
-
-using GymManagement.Application.Profiles.ListProfiles;
 using GymManagement.Contracts.Profiles;
 using GymManagement.Application.Profiles.Commands.CreateAdminProfile;
+using GymManagement.Application.Profiles.Queries.ListProfiles;
 
 namespace GymManagement.Api.Controllers;
 
