@@ -1,7 +1,8 @@
-﻿using AwesomeAssertions;
 using ErrorOr;
+using FluentAssertions;
 using GymManagement.Domain.Subscriptions;
-using GymManagement.TestCommon.EntityGenerators;
+using TestCommon.Gyms;
+using TestCommon.Subscriptions;
 
 namespace GymManagement.Domain.UnitTests.Subscriptions;
 
@@ -11,27 +12,23 @@ public class SubscriptionTests
     public void AddGym_WhenMoreThanSubscriptionAllows_ShouldFail()
     {
         // Arrange
+        // Create a subscription
+        var subscription = SubscriptionFactory.CreateSubscription();
 
-        Subscription subscription = SubscriptionGenerator.Generate(SubscriptionType.Free);
-        int allowedGyms = subscription.GetMaxGyms();
-        var extraGyms = Enumerable.Range(0, allowedGyms + 1).Select(_ => GymGenerator.Generate(subscription.Id)).ToList();
+        // Create the maximum number of gyms + 1
+        var gyms = Enumerable.Range(0, subscription.GetMaxGyms() + 1)
+            .Select(_ => GymFactory.CreateGym(id: Guid.NewGuid()))
+            .ToList();
 
         // Act
-
-        List<ErrorOr<Success>> results = extraGyms.ConvertAll(subscription.AddGym);
+        var addGymResults = gyms.ConvertAll(subscription.AddGym);
 
         // Assert
+        var allButLastGymResults = addGymResults[..^1];
+        allButLastGymResults.Should().AllSatisfy(addGymResult => addGymResult.Value.Should().Be(Result.Success));
 
-        ErrorOr<Success> errorResult = results.Last();
-
-        errorResult.IsError.Should().BeTrue();
-        errorResult.Errors.Should().HaveCount(1);
-        
-        Error expectedError = SubscriptionErrors.CannotHaveMoreGymsThanSubscriptionAllows;
-        errorResult.Errors.Single().Should().BeEquivalentTo(expectedError);
-
-        var successResults = results.SkipLast(1).ToList();
-        successResults.Should().HaveCount(allowedGyms);
-        successResults.Should().AllSatisfy(x => x.IsError.Should().BeFalse());
+        var lastAddGymResult = addGymResults.Last();
+        lastAddGymResult.IsError.Should().BeTrue();
+        lastAddGymResult.FirstError.Should().Be(SubscriptionErrors.CannotHaveMoreGymsThanTheSubscriptionAllows);
     }
 }
