@@ -18,8 +18,13 @@ public class CurrentUserProvider : ICurrentUserProvider
     {
         _httpContextAccessor.HttpContext.ThrowIfNull();
 
-        Claim? claim = _httpContextAccessor.HttpContext.User.Claims.FirstOrDefault(x => x.Type == "id");
+        Claim? idClaim = _httpContextAccessor.HttpContext.User.Claims.FirstOrDefault(x => x.Type == "id");
 
-        return new CurrentUser(Guid.Parse(claim!.Value));
+        var permissionClaims = _httpContextAccessor.HttpContext.User.Claims
+            .Where(x => x.Type == "permissions")
+            .Select(x => x.Value)
+            .ToList();
+
+        return new CurrentUser(Guid.Parse(idClaim!.Value), permissionClaims);
     }
 }
