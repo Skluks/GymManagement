@@ -475,13 +475,3 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
-
-# JetBrains Rider
-.idea/
-
-# Generated files
-.generated/
-.archives/
-
-# Configuration
-*.development.json
